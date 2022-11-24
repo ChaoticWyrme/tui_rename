@@ -1,0 +1,26 @@
+[package]
+name = "tui_rename"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cursive_table_view = "0.13.3"
+log = { version = "0.4.14", features = [
+    "max_level_info",
+    "release_max_level_warn",
+] }
+regex = "1.5.4"
+
+[dependencies.cursive]
+version = "0.16.3"
+default-features = false
+
+[features]
+default = ["crossterm-backend"]
+ncurses-backend = ["cursive/ncurses-backend"]
+pancurses-backend = ["cursive/pancurses-backend"]
+termion-backend = ["cursive/termion-backend"]
+crossterm-backend = ["cursive/crossterm-backend"]
+blt-backend = ["cursive/blt-backend"]
